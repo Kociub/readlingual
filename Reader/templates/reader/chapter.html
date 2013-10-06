@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}{{ work.title }}{% endblock %}
+
+{% block subtitle %}{% endblock %}
+
+{% block content %}
+				<div class="5grid-layout">
+						<table border="0">
+						
+						<tr>
+						<td>
+						<h1>{{ chapteroriginal.title }}</h1>
+						</td>
+						<td>
+						<h1>{{ chapter.title }}</h1>
+						</td>
+						</tr>
+						
+						{% for paragraph_original, paragraph_translated in chapter_paragraphs %}
+						<tr class="box box-style1">
+						<td style="vertical-align: top;text-align:left;border-right:3px solid #CCC;">
+						    {{ paragraph_original }}
+						</td>
+						<td style="vertical-align: top;text-align:left;">
+						    {{ paragraph_translated }}
+						</td>
+						</tr>
+						{% endfor %}
+						
+						</table>
+				</div>
+{% endblock %}
