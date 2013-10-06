@@ -1,0 +1,9 @@
+{% if latest_work_list %}
+    <ul>
+    {% for work in latest_work_list %}
+        <li><a href="/explorer/{{ work.id }}/">{{ work.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No works are available.</p>
+{% endif %}
