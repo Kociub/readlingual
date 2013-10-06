@@ -16,6 +16,6 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^explorer/', include('Explorer.urls')),
-    url(r'^reader/', include('Reader.urls')),
+    url(r'^explorer/', include('readlingual.apps.explorer.urls')),
+    url(r'^reader/', include('readlingual.apps.reader.urls')),
 )
