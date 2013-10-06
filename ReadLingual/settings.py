@@ -126,8 +126,8 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
-    'Explorer',
-    'Reader',
+    'readlingual.apps.explorer',
+    'readlingual.apps.reader',
 )
 
 # A sample logging configuration. The only tangible logging
