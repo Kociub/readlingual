@@ -5,29 +5,31 @@
 {% block subtitle %}{% endblock %}
 
 {% block content %}
-<div class="5grid-layout">
-<table border="1">
-<tr>
-<td style="border-right:5px solid #CCC;">
-<h1>{{ worklanguageoriginal_title }}</h1>
-</td>
-<td style="border-left:5px solid #CCC;">
-<h1>{{ worklanguage_title }}</h1>
-</td>
-</tr>
+	<div class="5grid-layout">
+		<table border="1">
+		
+			<tr>
+				<td style="border-right:5px solid #CCC;">
+					<h1>{{ worklanguageoriginal_title }}</h1>
+				</td>
+				<td style="border-left:5px solid #CCC;">
+					<h1>{{ worklanguage_title }}</h1>
+				</td>
+			</tr>
+			
+			{% for chapter_original, chapter_translated in chapters %}
 
-{% for chapter_original, chapter_translated in chapters %}
-<tr class="box box-style1">
-<td>
-    <a href="/reader/{{ chapter_original.id }}/{{ chapter_translated.id }}/">{{ chapter_original.title }}</a>
-</td>
-<td>
-    <a href="/reader/{{ chapter_original.id }}/{{ chapter_translated.id }}/">{{ chapter_translated.title }}</a>
-</td>
-</tr>
-{% endfor %}
+				<tr class="box box-style1">
+					<td>
+	    				<a href="/reader/{{ chapter_original.id }}/{{ chapter_translated.id }}/">{{ chapter_original.title }}</a>
+					</td>
+					<td>
+	    				<a href="/reader/{{ chapter_original.id }}/{{ chapter_translated.id }}/">{{ chapter_translated.title }}</a>
+					</td>
+				</tr>
+			
+			{% endfor %}
 
-</table>
-
-</div> 
+		</table>
+	</div> 
 {% endblock %}

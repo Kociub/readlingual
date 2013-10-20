@@ -5,13 +5,13 @@
 {% block subtitle %}{% endblock %}
 
 {% block content %}
-				<div class="5grid-layout">
-					<ul>
-					{% for worklanguage in work.worklanguage_set.all %}
-    					{% if worklanguage.language != work.original_language %}
-    						<li><b><a href="/explorer/{{ work.id }}/{{ worklanguage.id }}/">{{ worklanguage.title }} ({{ worklanguage.language }})</a></b></li>
-    					{% endif %}
-					{% endfor %}
-					</ul>
-				</div>
+	<div class="5grid-layout">
+		<ul>
+		{% for worklanguage in work.worklanguage_set.all %}
+			{% if worklanguage.language != work.original_language %}
+				<li><b><a href="/explorer/{{ work.id }}/{{ worklanguage.id }}/">{{ worklanguage.title }} ({{ worklanguage.language }})</a></b></li>
+			{% endif %}
+		{% endfor %}
+		</ul>
+	</div>
 {% endblock %}
