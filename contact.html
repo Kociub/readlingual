@@ -1,91 +1,41 @@
-<!DOCTYPE HTML>
-<!--
-	Miniport 1.0 by HTML5 Up!
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Miniport by HTML5 Up!</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,700" rel="stylesheet" />
-		<script src="static/js/jquery-1.8.3.min.js"></script>
-		<script src="static/css/5grid/init.js?use=mobile,desktop,1000px"></script>
-		<script src="static/js/init.js"></script>
-		<noscript>
-			<link rel="stylesheet" href="static/css/5grid/core.css" />
-			<link rel="stylesheet" href="static/css/5grid/core-desktop.css" />
-			<link rel="stylesheet" href="static/css/5grid/core-1200px.css" />
-			<link rel="stylesheet" href="static/css/5grid/core-noscript.css" />
-			<link rel="stylesheet" href="static/css/style.css" />
-			<link rel="stylesheet" href="static/css/style-desktop.css" />
-		</noscript>
-		<!--[if lte IE 9]><link rel="stylesheet" href="static/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="static/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 7]><link rel="stylesheet" href="static/css/ie7.css" /><![endif]-->
-	</head>
-	<body>
+{% extends "base.html" %}
 
-		<!-- Nav -->
-			<nav id="nav">
-				<ul>
-					<li><a href="/">Home</a></li>
-					<li><a href="#work">Works</a></li>
-					<li><a href="#contact">Search</a></li>
-					<li><a href="/contact">Contact</a></li>
-				</ul>
-			</nav>
+{% block title %}Send us a message!{% endblock %}
 
-		<!-- Contact -->
-			<div class="wrapper wrapper-style3">
-				<article id="contact">
-					<header>
-						<h2>Send us a message!</h2>
-						<span>This message will be send to our e-mail</span>
-					</header>
+{% block subtitle %}This message will be send to our e-mail{% endblock %}
+
+{% block content %}
+	<div class="5grid">
+		<div class="row">
+			<div class="12u">
+				<form method="post" action="#">
 					<div class="5grid">
 						<div class="row">
+							<div class="6u">
+								<input type="text" name="name" id="name" placeholder="Name" />
+							</div>
+							<div class="6u">
+								<input type="text" name="email" id="email" placeholder="Email" />
+							</div>
+						</div>
+						<div class="row">
 							<div class="12u">
-								<form method="post" action="#">
-									<div class="5grid">
-										<div class="row">
-											<div class="6u">
-												<input type="text" name="name" id="name" placeholder="Name" />
-											</div>
-											<div class="6u">
-												<input type="text" name="email" id="email" placeholder="Email" />
-											</div>
-										</div>
-										<div class="row">
-											<div class="12u">
-												<input type="text" name="subject" id="subject" placeholder="Subject" />
-											</div>
-										</div>
-										<div class="row">
-											<div class="12u">
-												<textarea name="message" id="message" placeholder="Message"></textarea>
-											</div>
-										</div>
-										<div class="row">
-											<div class="12u">
-												<input type="submit" class="button button-alt" value="Send" />
-											</div>
-										</div>
-									</div>
-								</form>
+								<input type="text" name="subject" id="subject" placeholder="Subject" />
+							</div>
+						</div>
+						<div class="row">
+							<div class="12u">
+								<textarea name="message" id="message" placeholder="Message"></textarea>
+							</div>
+						</div>
+						<div class="row">
+							<div class="12u">
+								<input type="submit" class="button button-alt" value="Send" />
 							</div>
 						</div>
 					</div>
-					<footer>
-						<p id="copyright">
-							&copy; 2012 Untitled | Images: <a href="http://fotogrph.com">Fotogrph</a> + <a href="http://iconify.it">Iconify.it</a> | Design: <a href="http://html5up.net/">HTML5 Up!</a>
-						</p>
-					</footer>
-				</article>
+				</form>
 			</div>
-
-
-	</body>
-</html>
+		</div>
+	</div>
+{% endblock %}
