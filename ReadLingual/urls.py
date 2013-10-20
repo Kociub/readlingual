@@ -11,6 +11,7 @@ urlpatterns = patterns('',
     # url(r'^LangText/', include('LangText.foo.urls')),
     url(r'^$', TemplateView.as_view(template_name="index.html")),
     url(r'^contact', TemplateView.as_view(template_name="contact.html")),
+    url(r'^search', TemplateView.as_view(template_name="search.html")),
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
