@@ -10,3 +10,5 @@ I believe that the best way to learn languages is to read a lot. This comes afte
 There a lot of great literature with translations on the internet, but there is no easy way of reading them on a split screen. This application aims to change that.
 
 If you are interested in joining in on the effort, you are welcome.
+
+The latest release is deployed under www.readlingual.com
