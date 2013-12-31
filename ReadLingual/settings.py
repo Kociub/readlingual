@@ -7,7 +7,7 @@ SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 MEDIA_ROOT = os.path.join(SITE_ROOT, 'assets')
 
 DATABASE_ENGINE = 'django.db.backends.sqlite3'
-DATABASE_NAME = os.path.join(SITE_ROOT, 'db') + '\\development.db'
+DATABASE_NAME = os.path.join(os.path.join(SITE_ROOT, 'db'),'development.db')
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
