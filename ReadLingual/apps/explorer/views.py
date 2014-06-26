@@ -5,7 +5,7 @@ from readlingual.apps.explorer.models import Work, WorkLanguage
 from readlingual.apps.reader.models import Chapter
 
 def index(request):
-    latest_work_list = Work.objects.all().order_by('-publication_date')[:5]
+    latest_work_list = Work.objects.all()[:5]
     context = {'latest_work_list': latest_work_list}
     return render(request, 'explorer/works.html', context)
 
@@ -21,8 +21,8 @@ def worklanguage(request, work_id, worklanguage_id):
         worklanguage = WorkLanguage.objects.get(pk=worklanguage_id)
         work = Work.objects.get(pk=work_id)
         worklanguageoriginal = WorkLanguage.objects.get(language=work.original_language)
-        worklanguageoriginal_chapters = Chapter.objects.filter(work_language=worklanguage)
-        worklanguage_chapters = Chapter.objects.filter(work_language=worklanguageoriginal.language)
+        worklanguageoriginal_chapters = Chapter.objects.filter(work_language=worklanguageoriginal.language).order_by('number')
+        worklanguage_chapters = Chapter.objects.filter(work_language=worklanguage).order_by('number')
         chapters = zip(worklanguageoriginal_chapters, worklanguage_chapters)
     except Work.DoesNotExist:
         raise Http404
