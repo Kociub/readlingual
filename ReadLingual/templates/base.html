@@ -9,6 +9,7 @@
 		<script src="{{ STATIC_URL }}js/jquery-1.8.3.min.js"></script>
 		<script src="{{ STATIC_URL }}css/5grid/init.js?use=mobile,desktop,1000px"></script>
 		<script src="{{ STATIC_URL }}js/init.js"></script>
+		{% block js %}{% endblock %}
 		<noscript>
 			<link rel="stylesheet" href="{{ STATIC_URL }}css/5grid/core.css" />
 			<link rel="stylesheet" href="{{ STATIC_URL }}css/5grid/core-desktop.css" />
@@ -47,34 +48,36 @@
 						<div class="row">
 							<div class="4u">
 								<section class="box box-style1">
+									<a class="main-link" href="/explorer">
 									<span class="image image-centered"><img src="static/images/work01.png" alt="" /></span>
 									<h3>Works</h3>
+									</a>
 									<p>A list of all available works.</p>
 								</section>
 							</div>
 							<div class="4u">
 								<section class="box box-style1">
+									<a class="main-link" href="/search">
 									<span class="image image-centered"><img src="static/images/work02.png" alt="" /></span>
 									<h3>Search</h3>
+									</a>
 									<p>Search for a specific work.</p>
 								</section>
 							</div>
 							<div class="4u">
 								<section class="box box-style1">
+									<a class="main-link" href="/contact">
 									<span class="image image-centered"><img src="static/images/work03.png" alt="" /></span>
 									<h3>Contact</h3>
+									</a>
 									<p>Contact us.</p>
 								</section>
 							</div>
 						</div>
 					</div>
 					{% endblock %}
-		<!--					<footer>
- 						<p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
-						<a href="#portfolio" class="button button-big">See some of my recent work</a>
-		
+					<footer>
 					</footer>
-		-->
 				</article>
 			</div>
 			
