@@ -1,33 +1,38 @@
 {% extends "base.html" %}
 
+{% block js %}
+<script src="{{ STATIC_URL }}js/jquery.qtip.min.js"></script>
+<script src="{{ STATIC_URL }}js/wordlookup.js"></script>
+{% endblock %}
+
 {% block title %}{{ work.title }}{% endblock %}
 
 {% block subtitle %}{% endblock %}
 
 {% block content %}
-				<div class="5grid-layout">
-						<table border="0">
-						
-						<tr>
-						<td>
-						<h1>{{ chapteroriginal.title }}</h1>
-						</td>
-						<td>
-						<h1>{{ chapter.title }}</h1>
-						</td>
-						</tr>
-						
-						{% for paragraph_original, paragraph_translated in chapter_paragraphs %}
-						<tr class="box box-style1">
-						<td style="vertical-align: top;text-align:left;border-right:3px solid #CCC;">
-						    {{ paragraph_original }}
-						</td>
-						<td style="vertical-align: top;text-align:left;">
-						    {{ paragraph_translated }}
-						</td>
-						</tr>
-						{% endfor %}
-						
-						</table>
-				</div>
+	<div id="chapter">
+		<table id="chapter-table">
+		
+		<tr>
+			<th>
+				<h2>{{ chapteroriginal.title }}</h2>
+			</th>
+			<th>
+				<h2>{{ chapter.title }}</h2>
+			</th>
+		</tr>
+		
+		{% for paragraph_original, paragraph_translated in chapter_paragraphs %}
+		<tr class="box box-style1">
+			<td class="paragraf-original">
+			    <p>{{ paragraph_original }}</p>
+			</td>
+			<td class="paragraf-translated">
+			    <p>{{ paragraph_translated }}</p>
+			</td>
+		</tr>
+		{% endfor %}
+		
+		</table>
+	</div>
 {% endblock %}
