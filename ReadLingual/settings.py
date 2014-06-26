@@ -1,5 +1,6 @@
 # Django settings for ReadLingual project.
 import os
+import sys
 import django
 
 DJANGO_ROOT = os.path.dirname(os.path.realpath(django.__file__))
@@ -20,8 +21,12 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+TEMPLATE_ROOT = os.path.join(SITE_ROOT, 'templates')
+
+sys.path.append(TEMPLATE_ROOT)
+
 TEMPLATE_DIRS = (
-    PATH_PROJECT + '/templates/',
+    TEMPLATE_ROOT,
 
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
@@ -88,7 +93,7 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    #"/usr/local/lib/python2.6/dist-packages/Django-1.4.1-py2.6.egg/django/contrib"
+    "/usr/local/lib/python2.6/dist-packages/Django-1.4.1-py2.6.egg/django/contrib"
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.

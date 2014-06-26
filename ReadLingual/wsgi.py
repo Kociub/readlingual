@@ -14,6 +14,12 @@ framework.
 
 """
 import os
+import sys
+
+#sys.path.append('/home/kociub/domains/readlingual.com/public_html')
+sys.path.append('/home/kociub/domains/readlingual.com/public_html/readlingual/readlingual')
+sys.path.append('/home/kociub/domains/readlingual.com/public_html/readlingual/readlingual/templates')
+sys.path.append('/home/kociub/domains/readlingual.com/public_html/readlingual')
 
 # We defer to a DJANGO_SETTINGS_MODULE already in the environment. This breaks
 # if running multiple sites in the same mod_wsgi process. To fix this, use
