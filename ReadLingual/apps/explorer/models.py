@@ -9,6 +9,7 @@ class Language(models.Model):
 class Work(models.Model):
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=200)
+    publication_date = models.DateTimeField('date published')
     original_language = models.ForeignKey(Language)
     def __unicode__(self):
         return self.title
