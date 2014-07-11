@@ -93,7 +93,7 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    "/usr/local/lib/python2.6/dist-packages/Django-1.4.1-py2.6.egg/django/contrib"
+    "/usr/local/lib/python2.6/dist-packages/Django-1.4.1-py2.6.egg/django/contrib",
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
