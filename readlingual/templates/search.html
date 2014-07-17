@@ -5,13 +5,20 @@
 {% block subtitle %}Search for works{% endblock %}
 
 {% block content %}
-	<form id="search" method="post" action="#">
+	<form id="search" method="get">
 		<div class="12u">
-			<input type="text" name="query" id="query" placeholder="Search for..."/>
+			<input type="text" name="query" id="query" placeholder="Search for..."></input>
 		</div>
 		<br />
 		<div class="12u">
 			<input type="submit" class="button button-alt" value="Search" />
 		</div>
 	</form>
+	{% if result %}
+		{% for (name, url, desc) in result %}
+		<p>{{ name }}</p>
+		<p>{{ url }}</p>
+		<p>{{ desc }}</p>
+	{% endfor %}
+{% endif %}
 {% endblock %}
