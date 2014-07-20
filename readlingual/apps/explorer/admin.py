@@ -13,7 +13,6 @@ class WorkLanguageInline(admin.StackedInline):
 class WorkAdmin(admin.ModelAdmin):
     fieldsets = [
         (None,               {'fields': ['title', 'author', 'original_language']}),
-        ('Date information', {'fields': ['publication_date'], 'classes': ['collapse']}),
     ]
     inlines = [WorkLanguageInline]
 

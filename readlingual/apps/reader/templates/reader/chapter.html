@@ -1,12 +1,17 @@
 {% extends "base.html" %}
 
+{% block js %}
+<script src="{{ STATIC_URL }}js/jquery.qtip.min.js"></script>
+<script src="{{ STATIC_URL }}js/wordlookup.js"></script>
+{% endblock %}
+
 {% block title %}{{ work.title }}{% endblock %}
 
 {% block subtitle %}{% endblock %}
 
 {% block content %}
 	<div id="chapter">
-		<table border="0">
+		<table id="chapter-table">
 		
 		<tr>
 			<th>
@@ -20,10 +25,10 @@
 		{% for paragraph_original, paragraph_translated in chapter_paragraphs %}
 		<tr class="box box-style1">
 			<td class="paragraf-original">
-			    {{ paragraph_original }}
+			    <p>{{ paragraph_original }}</p>
 			</td>
 			<td class="paragraf-translated">
-			    {{ paragraph_translated }}
+			    <p>{{ paragraph_translated }}</p>
 			</td>
 		</tr>
 		{% endfor %}
