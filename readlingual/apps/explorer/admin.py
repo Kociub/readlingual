@@ -15,8 +15,16 @@ class WorkAdmin(admin.ModelAdmin):
         (None,               {'fields': ['title', 'author', 'original_language']}),
     ]
     inlines = [WorkLanguageInline]
+    
+class WorkLanguageAdmin(admin.ModelAdmin):
+    fieldsets = [
+        (None,               {'fields': ['title', 'language', 'summary']}),
+    ]
+    inlines = [ChapterInline]
 
 admin.site.register(Work, WorkAdmin)
+
+admin.site.register(WorkLanguage, WorkLanguageAdmin)
 
 admin.site.register(Language)
 
