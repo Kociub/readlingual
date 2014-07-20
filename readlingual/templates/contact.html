@@ -8,24 +8,29 @@
 	<div id="contact" class="5grid">
 		<div class="row">
 			<div class="12u">
-				<form method="post" action="#">
+				<form method="get">
 					<div class="5grid">
 						<div class="row">
+							<div class="12u">
+								<p id="bademail" class="error-message">{{error_message}}</p>
+							</div>
+						</div>
+						<div class="row">
 							<div class="6u">
-								<input type="text" name="name" id="name" placeholder="Name" />
+								<input type="text" name="name" id="name" placeholder="Name" value="{{name}}" required/>
 							</div>
 							<div class="6u">
-								<input type="text" name="email" id="email" placeholder="Email" />
+								<input type="text" name="email" id="email" placeholder="Email" value="{{email}}" required/>
 							</div>
 						</div>
 						<div class="row">
 							<div class="12u">
-								<input type="text" name="subject" id="subject" placeholder="Subject" />
+								<input type="text" name="subject" id="subject" placeholder="Subject" value="{{subject}}" required/>
 							</div>
 						</div>
 						<div class="row">
 							<div class="12u">
-								<textarea name="message" id="message" placeholder="Message"></textarea>
+								<textarea name="message" id="message" placeholder="Message" required>{{message}}</textarea>
 							</div>
 						</div>
 						<div class="row">
