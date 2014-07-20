@@ -3,18 +3,22 @@ import os
 import sys
 import django
 
+DEBUG = False
+TEMPLATE_DEBUG = DEBUG
+
 DJANGO_ROOT = os.path.dirname(os.path.realpath(django.__file__))
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 
 PATH_PROJECT = os.path.realpath(os.path.dirname(__file__))
 
-MEDIA_ROOT = os.path.join(PATH_PROJECT, 'static')
-
 DATABASE_ENGINE = 'django.db.backends.sqlite3'
 DATABASE_NAME = os.path.join(os.path.join(SITE_ROOT, 'db'),'development.db')
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+EMAIL_HOST = "mail.server.com"
+EMAIL_PORT = "25"
+
+EMAIL_HOST_USER = "host_user"
+EMAIL_HOST_PASSWORD = "host_user_password"
 
 ADMINS = (
     ('root', 'root@readlingual.com'),
@@ -28,7 +32,6 @@ sys.path.append(TEMPLATE_ROOT)
 
 TEMPLATE_DIRS = (
     TEMPLATE_ROOT,
-
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -37,12 +40,7 @@ TEMPLATE_DIRS = (
 DATABASES = {
     'default': {
         'ENGINE': DATABASE_ENGINE, # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': DATABASE_NAME,                      # Or path to database file if using sqlite3.
-        # The following settings are not used with sqlite3:
-        #'USER': 'root',
-        #'PASSWORD': '!QAZ2wsx',
-        #'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        #'PORT': '',                      # Set to empty string for default.
+        'NAME': DATABASE_NAME,     # Or path to database file if using sqlite3.
     }
 }
 
@@ -94,7 +92,6 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    "/usr/local/lib/python2.6/dist-packages/Django-1.4.1-py2.6.egg/django/contrib",
     PATH_PROJECT,
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
@@ -110,7 +107,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '4k)d0vmy&antztk2po$=7r#240jx%6wl36g%ctnt4087z3l(cv'
+SECRET_KEY = 'Your secret key'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
